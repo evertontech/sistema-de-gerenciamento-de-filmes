@@ -1,4 +1,4 @@
-package model;
+package models;
 
 public abstract class Pessoa {
     private String nome;
@@ -19,7 +19,7 @@ public abstract class Pessoa {
     public Integer getIdade() {
         return this.idade;
     }
-    
+
     public String toString() {
         return "Nome: " + this.getNome() +
                 ", Idade: " + this.getIdade();
