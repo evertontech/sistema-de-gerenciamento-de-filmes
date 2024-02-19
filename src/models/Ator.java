@@ -16,4 +16,13 @@ public abstract class Ator extends Pessoa {
     public String toString() {
         return "Genêro: " + this.getGeneroPrincipal();
     }
+
+    @Override
+    public void setIdade(Integer idade) {
+        if (idade >= 5) {
+            super.setIdade(idade);
+        } else {
+            System.out.println("A idade não pode ser menor que 5 anos.");
+        }
+    }
 }
