@@ -20,7 +20,7 @@ public abstract class Ator extends Pessoa {
     @Override
     public void setIdade(Integer idade) {
         if (idade >= 5) {
-            super.setIdade(idade);
+            this.idade = idade;
         } else {
             System.out.println("A idade não pode ser menor que 5 anos.");
         }

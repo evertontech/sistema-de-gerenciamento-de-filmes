@@ -2,7 +2,7 @@ package models;
 
 public abstract class Pessoa {
     private String nome;
-    private Integer idade;
+    protected Integer idade;
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -13,7 +13,11 @@ public abstract class Pessoa {
     }
 
     public void setIdade(Integer idade) {
-        this.idade = idade;
+        if (idade >= 18) {
+            this.idade = idade;
+        } else {
+            System.out.println("A Idade não pode ser menor que 18 anos.");
+        }
     }
 
     public Integer getIdade() {
