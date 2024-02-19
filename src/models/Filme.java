@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public class Filme {
+public class Filme implements Avaliavel {
     private String titulo;
     private LocalTime tempoDeDuracao;
     private LocalDate dataDeLancamento;
@@ -86,5 +86,28 @@ public class Filme {
 
     public void exibirInformacoes() {
 
+    }
+
+    @Override
+    public void adicionarAvaliacao(Avaliacao avaliacao) {
+        this.avaliacoes.add(avaliacao);
+    }
+
+    @Override
+    public void limparAvaliacoes() {
+        this.avaliacoes.clear();
+    }
+
+    @Override
+    public Double calcularMediaAvaliacoes() {
+        Double somaPontuacao = 0.0;
+        int comprimento = 0;
+
+        for (Avaliacao avaliacao : this.getAvaliacoes()) {
+            somaPontuacao += avaliacao.getPontuacao();
+            comprimento = avaliacoes.size();
+        }
+
+        return somaPontuacao / comprimento;
     }
 }
