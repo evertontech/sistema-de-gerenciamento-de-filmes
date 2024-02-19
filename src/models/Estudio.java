@@ -2,7 +2,7 @@ package models;
 
 import java.util.List;
 
-public class Estudio {
+public class Estudio implements Avaliavel {
     private String nome;
     private Boolean independente;
     private List<Avaliacao> avaliacoes;
@@ -33,5 +33,26 @@ public class Estudio {
 
     public String toString() {
         return this.getNome() + this.getAvaliacoes();
+    }
+
+    @Override
+    public void adicionarAvaliacao(Avaliacao avaliacao) {
+        this.avaliacoes.add(avaliacao);
+    }
+
+    @Override
+    public void limparAvaliacoes() {
+        this.avaliacoes.clear();
+    }
+
+    @Override
+    public Double calcularMediaAvaliacoes() {
+        Double soma = 0.0;
+
+        for (Avaliacao avaliacao : getAvaliacoes()) {
+            soma += avaliacao.getPontuacao();
+        }
+
+        return soma / avaliacoes.size();
     }
 }
