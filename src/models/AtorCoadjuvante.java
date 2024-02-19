@@ -4,7 +4,12 @@ public class AtorCoadjuvante extends Pessoa {
     private Double grauDeFama;
 
     public void setGrauDeFama(Double grauDeFama) {
-        this.grauDeFama = grauDeFama;
+        if (grauDeFama >= 0.0 && grauDeFama <= 10.0) {
+            this.grauDeFama = grauDeFama;
+        } else {
+            System.out.println("O grau de fama deve estar dentro do intervalo [0.0, 10.0]");
+        }
+
     }
 
     public Double getGrauDeFama() {
