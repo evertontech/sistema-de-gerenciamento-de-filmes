@@ -2,14 +2,14 @@ package models;
 
 import enums.Genero;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Filme implements Avaliavel {
     private String titulo;
-    private LocalTime tempoDeDuracao;
-    private LocalDate dataDeLancamento;
+    private Duration tempoDeDuracao;
+    private LocalDateTime dataHorarioDeLancamento;
     private Diretor diretor;
     private Genero genero;
     private Estudio estudio;
@@ -36,20 +36,24 @@ public class Filme implements Avaliavel {
         }
     }
 
-    public LocalTime getTempoDeDuracao() {
+    public Duration getTempoDeDuracao() {
         return this.tempoDeDuracao;
     }
 
-    public void setTempoDeDuracao(LocalTime tempoDeDuracao) {
-        this.tempoDeDuracao = tempoDeDuracao;
+    public void setTempoDeDuracao(Duration tempoDeDuracao) {
+        if (tempoDeDuracao.isPositive()) {
+            this.tempoDeDuracao = tempoDeDuracao;
+        } else {
+            System.out.println("O tempo de duração não pode ser menor que zero");
+        }
     }
 
-    public LocalDate getDataDeLancamento() {
-        return this.dataDeLancamento;
+    public LocalDateTime getDataHorarioDeLancamento() {
+        return this.dataHorarioDeLancamento;
     }
 
-    public void setDataDeLancamento(LocalDate dataDeLancamento) {
-        this.dataDeLancamento = dataDeLancamento;
+    public void setDataHorarioDeLancamento(LocalDateTime dataHorarioDeLancamento) {
+        this.dataHorarioDeLancamento = dataHorarioDeLancamento;
     }
 
     public Diretor getDiretor() {
