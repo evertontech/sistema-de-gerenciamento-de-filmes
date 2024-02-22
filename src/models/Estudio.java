@@ -24,7 +24,11 @@ public class Estudio implements Avaliavel {
     }
 
     public void setIndependente(Boolean independente) {
-        this.independente = independente;
+        if (independente != null) {
+            this.independente = independente;
+        } else {
+            System.out.println("O atributo de indepedência do estúdio precisa ser um valor válido");
+        }
     }
 
     public List<Avaliacao> getAvaliacoes() {
