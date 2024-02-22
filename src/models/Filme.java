@@ -16,6 +16,12 @@ public class Filme implements Avaliavel {
     private List<Ator> elenco;
     private List<Avaliacao> avaliacoes;
 
+    public Filme(Diretor diretor) {
+        if (diretor != null) {
+            this.setDiretor(diretor);
+        }
+    }
+
     private void setElenco(List<Ator> elenco) {
         this.elenco = elenco;
     }
@@ -107,7 +113,7 @@ public class Filme implements Avaliavel {
                 && avaliacao.getPontuacao() >= 0.0
                 && avaliacao.getPontuacao() <= 10.0) {
             this.avaliacoes.add(avaliacao);
-        } else  {
+        } else {
             System.out.println("A pontuação está fora do intervalo");
         }
     }
