@@ -53,7 +53,12 @@ public class Filme implements Avaliavel {
     }
 
     public void setDataHorarioDeLancamento(LocalDateTime dataHorarioDeLancamento) {
-        this.dataHorarioDeLancamento = dataHorarioDeLancamento;
+        LocalDateTime dataHorarioAtual = LocalDateTime.now();
+        if (dataHorarioDeLancamento != null && dataHorarioDeLancamento.isBefore(dataHorarioAtual)) {
+            this.dataHorarioDeLancamento = dataHorarioDeLancamento;
+        } else {
+            System.out.println("A data de lançamento não pode ser depois da data atual.");
+        }
     }
 
     public Diretor getDiretor() {
