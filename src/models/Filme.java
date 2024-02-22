@@ -29,7 +29,11 @@ public class Filme implements Avaliavel {
     }
 
     public void setTitulo(String titulo) {
-        this.titulo = titulo;
+        if (titulo != null && !titulo.isBlank()) {
+            this.titulo = titulo;
+        } else {
+            System.out.println("O titulo do filme nao pode ser branco");
+        }
     }
 
     public LocalTime getTempoDeDuracao() {
