@@ -4,7 +4,11 @@ public class AtorPrincipal extends Pessoa {
     private Integer anosDeExperiencia;
 
     public void setAnosDeExperiencia(Integer anosDeExperiencia) {
-        this.anosDeExperiencia = anosDeExperiencia;
+        if (anosDeExperiencia != null && anosDeExperiencia > 0) {
+            this.anosDeExperiencia = anosDeExperiencia;
+        } else {
+            System.out.println("Os anos de experiencia deve ser maior ou igual a zero");
+        }
     }
 
     public Integer getAnosDeExperiencia() {
