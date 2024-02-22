@@ -12,7 +12,11 @@ public class Estudio implements Avaliavel {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (nome != null && !nome.isBlank()) {
+            this.nome = nome;
+        } else {
+            System.out.println("O nome do estudio não pode ser nulo ou vazio");
+        }
     }
 
     public Boolean isIndependente() {
