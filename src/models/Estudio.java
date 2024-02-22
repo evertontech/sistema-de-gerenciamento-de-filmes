@@ -41,7 +41,13 @@ public class Estudio implements Avaliavel {
 
     @Override
     public void adicionarAvaliacao(Avaliacao avaliacao) {
-        this.avaliacoes.add(avaliacao);
+        if (avaliacao != null
+                && avaliacao.getPontuacao() >= 0.00
+                && avaliacao.getPontuacao() <= 5.00) {
+            this.avaliacoes.add(avaliacao);
+        } else {
+            System.out.println("A pontuação da avaliação do estúdio está fora do intervalo.");
+        }
     }
 
     @Override
