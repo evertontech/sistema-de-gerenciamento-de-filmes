@@ -1,6 +1,6 @@
 package models;
 
-public class AtorCoadjuvante extends Pessoa {
+public class AtorCoadjuvante extends Ator {
     private Double grauDeFama;
 
     public void setGrauDeFama(Double grauDeFama) {

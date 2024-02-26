@@ -1,6 +1,6 @@
 package models;
 
-public class AtorPrincipal extends Pessoa {
+public class AtorPrincipal extends Ator {
     private Integer anosDeExperiencia;
 
     public void setAnosDeExperiencia(Integer anosDeExperiencia) {
