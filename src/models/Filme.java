@@ -16,9 +16,12 @@ public class Filme implements Avaliavel {
     private List<Ator> elenco;
     private List<Avaliacao> avaliacoes;
 
-    public Filme(Diretor diretor) {
-        if (diretor != null) {
+    public Filme(Diretor diretor, AtorPrincipal atorPrincipal) {
+        if (diretor != null && atorPrincipal != null) {
             this.setDiretor(diretor);
+            this.adicionarAtor(atorPrincipal);
+        } else {
+            System.out.println("O filme deve ter um diretor e um ator principal.");
         }
     }
 
