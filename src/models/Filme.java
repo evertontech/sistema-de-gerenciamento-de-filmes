@@ -102,8 +102,21 @@ public class Filme implements Avaliavel {
         return this.avaliacoes;
     }
 
-    public void adicionarAtor(Ator ator) {
-        this.elenco.add(ator);
+    public void adicionarAtor(Ator ator) { // tite
+        int contador = 0;
+
+        for (Ator atorDaLista : elenco) { // helton, everton, matarazzo, tite, diniz
+            if (atorDaLista.getNome().equals(ator.getNome())) {
+                System.out.println("O nome do ator não pode ser igual");
+                contador++;
+                break;
+            }
+        }
+
+        if (contador == 0) {
+            this.elenco.add(ator);
+        }
+
     }
 
     public void exibirInformacoes() {
