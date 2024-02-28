@@ -120,10 +120,6 @@ public class Filme implements Avaliavel {
         }
     }
 
-    public void exibirInformacoes() {
-
-    }
-
     @Override
     public void adicionarAvaliacao(Avaliacao avaliacao) {
         if (avaliacao != null
@@ -177,5 +173,16 @@ public class Filme implements Avaliavel {
         } else {
             return Classificacao.MAIOR_18;
         }
+    }
+
+    public void exibirAvaliacoes() {
+        for (Avaliacao avaliacao : avaliacoes) {
+            System.out.println(avaliacao.getCritico());
+            System.out.println("Pontuação atribuída: " + avaliacao.getPontuacao());
+        }
+    }
+
+    public void exibirInformacoes() {
+
     }
 }

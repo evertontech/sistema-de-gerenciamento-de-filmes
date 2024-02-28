@@ -14,6 +14,6 @@ public class Critico extends Pessoa {
     }
 
     public String toString() {
-        return "Veículo de crítica: " + this.getVeiculoDeCritica();
+        return super.toString() + ", Veículo de crítica: " + this.getVeiculoDeCritica();
     }
 }
