@@ -185,4 +185,8 @@ public class Filme implements Avaliavel {
     public void exibirInformacoes() {
 
     }
+
+    public void exibirClassificacao() {
+        System.out.println("A classificação indicativa desse filme é: " + this.calcularClassificacao());
+    }
 }
