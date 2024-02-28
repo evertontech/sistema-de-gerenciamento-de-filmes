@@ -1,5 +1,6 @@
 package models;
 
+import enums.Classificacao;
 import enums.Genero;
 
 import java.time.Duration;
@@ -150,5 +151,31 @@ public class Filme implements Avaliavel {
         }
 
         return somaPontuacao / comprimento;
+    }
+
+    public Classificacao calcularClassificacao() {
+        int menorIdadeDosAtores = 0;
+
+        for (Ator ator : elenco) {
+            if (ator.getIdade() < menorIdadeDosAtores) {
+                menorIdadeDosAtores = ator.getIdade();
+            }
+        }
+
+        int idadeDeClassificacao = menorIdadeDosAtores + 5;
+
+        if (idadeDeClassificacao < 10) {
+            return Classificacao.LIVRE;
+        } else if (idadeDeClassificacao < 12) {
+            return Classificacao.MAIOR_10;
+        } else if (idadeDeClassificacao < 14) {
+            return Classificacao.MAIOR_12;
+        } else if (idadeDeClassificacao < 16) {
+            return Classificacao.MAIOR_14;
+        } else if (idadeDeClassificacao < 18) {
+            return Classificacao.MAIOR_16;
+        } else {
+            return Classificacao.MAIOR_18;
+        }
     }
 }
