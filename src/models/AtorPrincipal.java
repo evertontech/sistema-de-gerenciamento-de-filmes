@@ -1,7 +1,14 @@
 package models;
 
+import enums.Genero;
+
 public class AtorPrincipal extends Ator {
     private Integer anosDeExperiencia;
+
+    public AtorPrincipal(String nome, Integer idade, Genero generoPrincipal, Integer anosDeExperiencia) {
+        super(nome, idade, generoPrincipal);
+        this.setAnosDeExperiencia(anosDeExperiencia);
+    }
 
     public void setAnosDeExperiencia(Integer anosDeExperiencia) {
         if (anosDeExperiencia != null && anosDeExperiencia > 0) {
