@@ -4,6 +4,11 @@ public abstract class Pessoa {
     private String nome;
     protected Integer idade;
 
+    public Pessoa(String nome, Integer idade) {
+        this.setNome(nome);
+        this.setIdade(idade);
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
