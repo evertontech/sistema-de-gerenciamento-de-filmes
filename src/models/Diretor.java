@@ -3,6 +3,11 @@ package models;
 public class Diretor extends Pessoa {
     private String nacionalidade;
 
+    public Diretor(String nome, Integer idade, String nacionalidade) {
+        super(nome, idade);
+        this.setNacionalidade(nacionalidade);
+    }
+
     public void setNacionalidade(String nacionalidade) {
         if (nacionalidade != null && !nacionalidade.isBlank()) {
             this.nacionalidade = nacionalidade;
