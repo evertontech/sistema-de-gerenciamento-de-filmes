@@ -193,4 +193,18 @@ public class Filme implements Avaliavel {
     public void exibirMediaDasAvaliacoes() {
         System.out.printf("A média das avaliações é: %.2f\n", this.calcularMediaAvaliacoes());
     }
+
+    public Double calcularMediaDeIdadesCoadjuvantes() {
+        Double somaIdade = 0.0;
+        int contador = 0;
+
+        for (Ator ator : elenco) {
+            if (ator instanceof AtorCoadjuvante) {
+                somaIdade += ator.getIdade();
+                contador++;
+            }
+        }
+
+        return somaIdade / contador;
+    }
 }
