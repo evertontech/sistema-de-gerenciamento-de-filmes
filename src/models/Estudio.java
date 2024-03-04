@@ -7,6 +7,11 @@ public class Estudio implements Avaliavel {
     private Boolean independente;
     private List<Avaliacao> avaliacoes;
 
+    public Estudio(String nome, Boolean independente) {
+        this.setNome(nome);
+        this.setIndependente(independente);
+    }
+
     public String getNome() {
         return this.nome;
     }
