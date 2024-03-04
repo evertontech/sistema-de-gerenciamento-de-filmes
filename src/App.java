@@ -26,6 +26,24 @@ public class App {
 
         Critico critico1 = new Critico("Roger Ebert", 70, VeiculoDeCritica.JORNAL);
         Critico critico2 = new Critico("Peter Travers", 80, VeiculoDeCritica.REVISTA);
+
+        Avaliacao avaliacao1 = new Avaliacao(critico1, 9.0);
+        Avaliacao avaliacao2 = new Avaliacao(critico2, 8.5);
+
+        filme.adicionarAvaliacao(avaliacao1);
+        filme.adicionarAvaliacao(avaliacao2);
+
+        filme.exibirInformacoes();
+        filme.exibirAvaliacoes();
+        filme.exibirClassificacao();
+        filme.exibirMediaDasAvaliacoes();
+        System.out.println("Média de idades dos atores Coadjuvantes: " + filme.calcularMediaDeIdadesCoadjuvantes());
+
+
+
+
+
     }
-    
+
+
 }
