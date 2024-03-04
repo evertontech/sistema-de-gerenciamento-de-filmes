@@ -17,8 +17,16 @@ public class Filme implements Avaliavel {
     private List<Ator> elenco;
     private List<Avaliacao> avaliacoes;
 
-    public Filme(Diretor diretor, AtorPrincipal atorPrincipal) {
+    public Filme(String titulo,
+                 Duration tempoDeDuracao,
+                 LocalDateTime dataHorarioDeLancamento,
+                 Diretor diretor,
+                 AtorPrincipal atorPrincipal) {
+
         if (diretor != null && atorPrincipal != null) {
+            this.setTitulo(titulo);
+            this.setTempoDeDuracao(tempoDeDuracao);
+            this.setDataHorarioDeLancamento(dataHorarioDeLancamento);
             this.setDiretor(diretor);
             this.adicionarAtor(atorPrincipal);
         } else {
