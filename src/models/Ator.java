@@ -5,6 +5,11 @@ import enums.Genero;
 public abstract class Ator extends Pessoa {
     private Genero generoPrincipal;
 
+    public Ator(String nome, Integer idade, Genero generoPrincipal) {
+        super(nome, idade);
+        this.setGeneroPrincipal(generoPrincipal);
+    }
+
     public void setGeneroPrincipal(Genero generoPrincipal) {
         this.generoPrincipal = generoPrincipal;
     }
