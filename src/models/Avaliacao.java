@@ -4,7 +4,7 @@ public class Avaliacao {
     private Critico critico;
     private Double pontuacao;
 
-    public void setCritico(Critico critico){
+    public void setCritico(Critico critico) {
         this.critico = critico;
     }
 
