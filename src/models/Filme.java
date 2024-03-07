@@ -5,6 +5,7 @@ import enums.Genero;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Filme implements Avaliavel {
@@ -27,6 +28,8 @@ public class Filme implements Avaliavel {
             this.setTitulo(titulo);
             this.setTempoDeDuracao(tempoDeDuracao);
             this.setDataHorarioDeLancamento(dataHorarioDeLancamento);
+            this.setElenco(new ArrayList<>());
+            this.setAvaliacoes(new ArrayList<>());
             this.setDiretor(diretor);
             this.adicionarAtor(atorPrincipal);
         } else {
