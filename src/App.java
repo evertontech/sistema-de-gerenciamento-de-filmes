@@ -38,6 +38,4 @@ public class App {
         filme.exibirMediaDasAvaliacoes();
         System.out.println("Média de idades dos atores Coadjuvantes: " + filme.calcularMediaDeIdadesCoadjuvantes());
     }
-
-
 }
